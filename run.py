@@ -2,11 +2,12 @@ import random
 
 class TicTacToeGame:
 
+    def __init__(self, board):
+        self.board = board
+
     def create_board(self):
         """
-        Creates the board for the game
-        3 rows and 3 columns
-        9 spaces total
+        Creates a 3x3 board for the game
         """
         for i in range(3):
             row[]
@@ -33,7 +34,9 @@ class TicTacToeGame:
         """
         Defines what happens when the game is won
         A game is won when a player have all 3 markers in a row
+        Horizantally, vertically or diagonally
         """
+
     
     def board_full():
         """
