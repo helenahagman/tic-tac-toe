@@ -28,36 +28,22 @@ class TicTacToeGame:
         "Next move is made by the computer.\n"
         "The winner has successfully placed 3 markers in a row, vertically,\n"
         "horizontally or diagonally\n")
-        input("Press enter to start the game")
-
-    #def player_one():
-        """
-        Human player marks with X in the game
-        """
-
-    def computer_player()
-        """
-        Computer player marks with O in the game
-        """
+        
+    input("Press enter to start the game")
 
 
-    #def start():
-        """
-        Start the game and shows the board
-        """    
-    
-    #def win():
-        """
-        Defines what happens when the game is won
-        A game is won when a player have all 3 markers in a row
-        Horizantally, vertically or diagonally
-        """
+def player_name():
+    """
+    Player will chose their name for the game
+    Only alphabetic characters will be accepted
+    """
+    print("Choose a name for this game")
+    while True:
+        name = input("My name is: ")
+        if name.isalpha():
+            print(f"Hi {name}, let's play!")
+        else:
+            print("Your name can only be alphabetic letters, try again")
+            
+player_name()
 
-    
-    #def board_full():
-        """
-        When both players used their initial 3 marks
-        the game continues but now the players need to move a marker on the board to a different space
-        """
-
-                                                       
