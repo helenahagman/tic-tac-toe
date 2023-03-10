@@ -17,7 +17,7 @@ print("\n")
 
 class TicTacToeGame:
     def __init__(self):
-        self.board = [["-", "-", "-"], ["-", "-", "-"], ["-", "-", "-"]]
+        self.board = []
         self.symbol_1, self_symbol_2 = self.decide_symbol()
 
     def main():
@@ -44,11 +44,10 @@ class TicTacToeGame:
         """
         Creates a 3x3 board for the game
         """
-        for i in range(3):
-            row = []
-            for j in range(3):
-                row.append('-')
-            self.board.append(row)
+        print("Tic-Tac-Toe")
+        board = [ [0] * 3 ] * 3
+        for row in board:
+            print(row)
 
 
 def player_name():
@@ -67,6 +66,16 @@ def player_name():
             
 player_name()
 
+def first_player():
+    """
+    Will choose randomly which player starts
+    """
+    if random.randint(0, 1) == 0:
+        return 'computer'
+    else:
+        return '{player_name}'
+        
+
 def start_game(board, symbol_1, symbol_2):
     """
     Starts the game and decides who will start
@@ -76,6 +85,7 @@ def start_game(board, symbol_1, symbol_2):
     elif count % 2 == 1:
         player = symbol_2
     print("Player" + player +", it´s your turn")
+
 
 
 game = TicTacToeGame()
