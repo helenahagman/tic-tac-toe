@@ -74,18 +74,33 @@ def first_player():
         return 'computer'
     else:
         return '{player_name}'
-        
+
 
 def start_game(board, symbol_1, symbol_2):
     """
     Starts the game and decides who will start
+    Also checks if move is possible or not
     """
     if count % 2 == 0:
         player = symbol_1
     elif count % 2 == 1:
         player = symbol_2
-    print("Player" + player +", it´s your turn")
+    print("Player" + player +", it is your turn")
+    column = int(input("Choose a column:"
+                    "[left column: 0, middle column: 1, right column: 2]"))
 
+    row = int(input("Choose a row:"
+                    "[upper row: 0, middle row: 1, right row: 2]"))
+    
+
+    while (column < 0 or column > 2) or (row < 0 or row > 2):
+        wrong_selection(column, row)
+        column = int(input("Choose a column:"
+                    "[left column: 0, middle column: 1, right column: 2]"))
+
+        row = int(input("Choose a row:"
+                    "[upper row: 0, middle row: 1, right row: 2]"))
+        
 
 
 game = TicTacToeGame()
