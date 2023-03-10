@@ -30,23 +30,23 @@ input("Press enter to start the game")
 
 game_rules()
 
-    def player_name():
-        """
-        Player will chose their name for the game
-        Only alphabetic characters will be accepted
-        """
-        print("Choose a name for this game")
-        while True:
-            name = input("My name is: ")
-            if name.isalpha():
-                print(f"Hi {name}, let's play!")
-        else:
-            print("Your name can only be alphabetic characters, try again")
+def player_name():
+    """
+    Player will chose their name for the game
+    Only alphabetic characters will be accepted
+    """
+    print("Choose a name for this game")
+    while True:
+        name = input("My name is: ")
+        if name.isalpha():
+            print(f"Hi {name}, let's play!")
+    else:
+        print("Your name can only be alphabetic characters, try again")
             
 player_name()
 
-    def __init__(self):
-        self.board = []
+def __init__(self):
+    self.board = []
 
     def create_board(self):
         """
@@ -58,5 +58,7 @@ player_name()
                 row.append('-')
             self.board.append(row)
 
-
+game = TicTacToeGame()
+game.create_board()
+print(game.board)  
     
