@@ -19,15 +19,27 @@ class TicTacToeGame:
             self.board.append(row)
 
 
+    def game_rules():
+        """
+        Shows the rules of the game to the player
+        """
+        print("How to play the game:\n")
+        print("Make a move by placing your marker, represented by X or 0, on the board.\n" 
+        "Next move is made by the computer.\n"
+        "The winner has successfully placed 3 markers in a row, vertically,\n"
+        "horizontally or diagonally\n")
+        input("Press enter to start the game")
+
     #def player_one():
         """
-        Human player defined with X in the game
+        Human player marks with X in the game
         """
 
-    #def computer_player()
+    def computer_player()
         """
-        Computer player defined with O in the game
+        Computer player marks with O in the game
         """
+
 
     #def start():
         """
