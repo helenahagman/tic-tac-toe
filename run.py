@@ -17,7 +17,7 @@ print("\n")
 
 class TicTacToeGame:
     def __init__(self):
-        self.board = []
+        self.board = [["-", "-", "-"], ["-", "-", "-"], ["-", "-", "-"]]
         self.symbol_1, self_symbol_2 = self.decide_symbol()
 
     def main():
