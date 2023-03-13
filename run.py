@@ -19,8 +19,7 @@ class TicTacToeGame:
     def __init__(self):
         self.board = [' ' for _ in range(9)]        
         self.current_player = 'X'
-        #self.symbol_1, self_symbol_2 = self.decide_symbol()
-        #self.name = self.player_name()
+       
     
     def player_name(self):
         """
@@ -60,25 +59,7 @@ class TicTacToeGame:
         else:
             print("Not correct, make another move.")
 
-        """
-        count = 0
-        human_turn = first_player()
-        while True:
-            if human_turn == "human":
-                self.human_move()
-                count += 1
-                computer_turn = "computer"
-            else:
-                self.computer_move()
-                count += 1
-                human_turn = "human"
-            winner = self.check_winner()
-            if winner:
-                print(f"Congrats {winner} just won!")
-                break
-            elif count == 9:
-                print("Tie! Nobody won, try again!")
-        """        
+            
 
         def human_move(self):
             """
@@ -114,11 +95,13 @@ class TicTacToeGame:
             """
             Will check for a winner with 3 in a row 
             """
-            lines = [self.board[0], self.board[1], self.board[2],
-                 [self.board[0][0], self.board[1][0], self.board[2][0]],
-                 [self.board[0][1], self.board[1][1], self.board[2][1]],
-                 [self.board[0][2], self.board[1][2], self.board[2][2]],
-                 [self.board[0][0], self.board[1][1],]]
+            winning_positions = [(0, 1, 2), (3, 4, 5), (6, 7, 8), (0, 3, 6), (1, 4, 7), (2, 5, 8), (0, 4, 8), (2, 4, 6)]
+            for pos in winning_positions:
+                if self.board[pos[0]] == self.board[pos[1]] == self.board[pos[2]] != ' ':
+                    return self.board[pos[0]]
+            if ' ' not in self.board:
+                return 'tie'
+            return None
 
 
         def print_board(self):
