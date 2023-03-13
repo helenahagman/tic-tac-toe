@@ -26,6 +26,7 @@ class TicTacToeGame:
         """
         self.create_board()
         self.game_rules()
+        self.play()
         
 
     
@@ -49,6 +50,66 @@ class TicTacToeGame:
         for row in board:
             print(row)
         self.board = board
+
+    def play(self):
+        """
+        Will start the game
+        Human player and Computer player will take turns
+        """
+        count = 0
+        human_turn = first_player()
+        while True:
+            if human_turn == "human":
+                self.human_move()
+                count += 1
+                computer_turn = "computer"
+            else:
+                self.computer_move()
+                count += 1
+                human_turn = "human"
+            winner = self.check_winner()
+            if winner:
+                print(f"Congrats {winner} just won!")
+                break
+            elif count == 9:
+                print("Tie! Nobody won, try again!")
+                break
+
+        def human_move(self):
+            """
+            Will allow the human player to make a move
+            checks if it is a possible move and updates the board accordningly
+            """
+            print(f"{player_name}, make your move.")
+            while true: 
+                col = int(input("Choose column, 0-2: "))
+                row = int(input("Choose row, 0-2: "))
+                if self.board[col][row] == "-":
+                    self.board[col][row] = self.symbol_1
+                    break
+            self.print_board()
+
+        def computer_move(self):
+            """
+            Will allow the computer player to make a random move
+            Updates the board accordningly
+            """
+            print("Computer makes a move.")
+            while true: 
+                col = int(input("Choose column, 0-2: "))
+                row = int(input("Choose row, 0-2: "))
+                if self.board[col][row] == "-":
+                    self.board[col][row] = self.symbol_1
+                    break
+            self.print_board()
+
+        def winner_check(self):
+            """
+            Will check for a winner with 3 in a row 
+            """
+            cols = [[self.board[i][j]] for i in range(3)] for j in range(3)
+            cols = [[self.board[i][j]] for i in range(3)] for j in range(3)
+            cols = [[self.board[i][j]] for i in range(3)] for j in range(3)
 
 
 def player_name():
