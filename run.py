@@ -45,9 +45,10 @@ class TicTacToeGame:
         Creates a 3x3 board for the game
         """
         print("Tic-Tac-Toe")
-        board = [ [0] * 3 ] * 3
+        board = [ ["-"] * 3 for _ in range(3) ]
         for row in board:
             print(row)
+        self.board = board
 
 
 def player_name():
