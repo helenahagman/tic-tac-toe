@@ -8,58 +8,58 @@ print(welcome)
 #Shows the rules of the game to the player
 game_rules = '''
     Here's how you play the game:
-        - Make a move by placing your marker, X or 0, on the board. 
-        - Next move is made by the computer.
-        - The player who successfully places 3 markers in a row, vertically,horizontally or diagonally will win'''
+        * Make a move by placing your marker, X or 0, on the board. 
+        * Next move is made by the computer.
+        * The player who successfully places 3 markers in a row, vertically,horizontally or diagonally will win\n'''
         
 print(game_rules)
 print("\n")
 
 class TicTacToeGame:
     def __init__(self):
-        self.board = None        
-        self.symbol_1, self_symbol_2 = self.decide_symbol()
-        self.name = self.player_name()
+        self.board = [' ' for _ in range(9)]        
+        self.current_player = 'X'
+        #self.symbol_1, self_symbol_2 = self.decide_symbol()
+        #self.name = self.player_name()
     
     def player_name(self):
         """
         Player will chose their name for the game
         Only alphabetic characters will be accepted
         """
-        print("Print your name for this game")
+        print("Please pick a name for this game.")
         while True:
-            name = input("My name is: ")
+            name = input("Name: ")
             if name.isalpha():
                 print(f"Hi {name}, let's play!")
                 return name
             else:
                 print("Your name can only be alphabetic characters, try again")
             
-           
-    def decide_symbol(self):
-        """
-        Will randomly choose what symbol the player and computer will play, X or O
-        """
-        symbol_1 = random.choice(["X", "O"])
-        if symbol_1 == "X":
-            symbol_2 = "O"
-        else:
-            symbol_2 = "X"
-        return symbol_1, symbol_2
-
+    
     def create_board():
         """
-        Creates a board 3x3
+        Creates a board 3 rows and 3 columns
         """
-        board = [[" ", " ", " "],
-                 [" ", " ", " "],
-                 [" ", " ", " "]]
-        return board
+        print('-------------')
+        for i in range(0, 9, 3):
+            print(f'| {self.board[i]} | {self.board[i+1]} | {self.board[i+2]} |')
+            print('-------------')
 
-    def play(self):
+    def play(self, position):
         """
         Will start the game
         Human player and Computer player will take turns
+        """
+        if self.board[position] == ' ':
+            self.board[position] = self.current_player
+            if self.current_player == 'X':
+                self.current_player = 'O'
+            else:
+                self.current_player = 'X'
+        else:
+            print("Not correct, make another move.")
+
         """
         count = 0
         human_turn = first_player()
@@ -78,7 +78,7 @@ class TicTacToeGame:
                 break
             elif count == 9:
                 print("Tie! Nobody won, try again!")
-                
+        """        
 
         def human_move(self):
             """
