@@ -17,24 +17,23 @@ print("\n")
 
 class TicTacToeGame:
     def __init__(self):
-        self.board = []
+        self.board = None        
         self.symbol_1, self_symbol_2 = self.decide_symbol()
-        self.player_name()
+        self.name = self.player_name()
     
-    def player_name():
-    """
-    Player will chose their name for the game
-    Only alphabetic characters will be accepted
-    """
-    print("Print your name for this game")
-    while True:
-        name = input("My name is: ")
-        if name.isalpha():
-            print(f"Hi {name}, let's play!")
-            slef.name = name
-            break
-        else:
-            print("Your name can only be alphabetic characters, try again")
+    def player_name(self):
+        """
+        Player will chose their name for the game
+        Only alphabetic characters will be accepted
+        """
+        print("Print your name for this game")
+        while True:
+            name = input("My name is: ")
+            if name.isalpha():
+                print(f"Hi {name}, let's play!")
+                return name
+            else:
+                print("Your name can only be alphabetic characters, try again")
             
            
     def decide_symbol(self):
@@ -48,15 +47,14 @@ class TicTacToeGame:
             symbol_2 = "X"
         return symbol_1, symbol_2
 
-    def create_board(self):
+    def create_board():
         """
-        Creates a 3x3 board for the game
+        Creates a board 3x3
         """
-        print("Tic-Tac-Toe")
-        board = [["-"] * 3 for _ in range(3)]
-        for row in board:
-            print(row)
-        self.board = board
+        board = [[" ", " ", " "],
+                 [" ", " ", " "],
+                 [" ", " ", " "]]
+        return board
 
     def play(self):
         """
@@ -64,7 +62,7 @@ class TicTacToeGame:
         Human player and Computer player will take turns
         """
         count = 0
-        human_turn = first_player(self.name)
+        human_turn = first_player()
         while True:
             if human_turn == "human":
                 self.human_move()
@@ -87,13 +85,15 @@ class TicTacToeGame:
             Will allow the human player to make a move
             checks if it is a possible move and updates the board accordningly
             """
-            print(f"{player_name}, make your move.")
-            while true: 
+            print(f"{self.name}, make your move.")
+            while True: 
                 col = int(input("Choose column, 0-2: "))
                 row = int(input("Choose row, 0-2: "))
-                if self.board[col][row] == "-":
-                    self.board[col][row] = self.symbol_1
+                if self.board[row][col] == "-":
+                    self.board[row][col] = self.symbol_1
                     break
+                else:
+                    print("You need to make another move, this space is taken")
             self.print_board()
 
         def computer_move(self):
@@ -102,7 +102,7 @@ class TicTacToeGame:
             Updates the board accordningly
             """
             print("Computer makes a move.")
-            while true: 
+            while True: 
                 col = int(input("Choose column, 0-2: "))
                 row = int(input("Choose row, 0-2: "))
                 if self.board[col][row] == "-":
@@ -114,14 +114,12 @@ class TicTacToeGame:
             """
             Will check for a winner with 3 in a row 
             """
-            cols = [[self.board[i][j]] for i in range(3)] for j in range(3)]
-            rows = [[self.board[i][j]] for j in range(3)] for i in range(3)]
-            diags = [[self.board[i][j]] for i in range(3)], [self.board[1][2-i]] for j in range(3)
-            lines = cols + rows + diags
-            for line in lines:
-                if len(set(line)) == 1 and line[0] != "-":
-                    return line[0]
-            return None
+            lines = [self.board[0], self.board[1], self.board[2],
+                 [self.board[0][0], self.board[1][0], self.board[2][0]],
+                 [self.board[0][1], self.board[1][1], self.board[2][1]],
+                 [self.board[0][2], self.board[1][2], self.board[2][2]],
+                 [self.board[0][0], self.board[1][1],]]
+
 
         def print_board(self):
             """
@@ -171,6 +169,5 @@ def start_game(board, symbol_1, symbol_2):
 
 
 game = TicTacToeGame()
-game.create_board()
 print(game.board)  
     
