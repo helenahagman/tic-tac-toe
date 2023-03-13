@@ -107,9 +107,14 @@ class TicTacToeGame:
             """
             Will check for a winner with 3 in a row 
             """
-            cols = [[self.board[i][j]] for i in range(3)] for j in range(3)
-            cols = [[self.board[i][j]] for i in range(3)] for j in range(3)
-            cols = [[self.board[i][j]] for i in range(3)] for j in range(3)
+            cols = [[self.board[i][j]] for i in range(3)] for j in range(3)]
+            row = [[self.board[i][j]] for j in range(3)] for i in range(3)]
+            diags = [[self.board[i][j]] for i in range(3)], [self.board[1][2-i]] for j in range(3)]
+            lines = cols + rows + diags
+            for line in lines:
+                if len(set(line)) == 1 and line[0] != "-":
+                    retunr line[0]
+            return None
 
 
 def player_name():
