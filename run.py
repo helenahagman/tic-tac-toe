@@ -19,17 +19,24 @@ class TicTacToeGame:
     def __init__(self):
         self.board = []
         self.symbol_1, self_symbol_2 = self.decide_symbol()
-
-    def main():
-        """
-        Main function
-        """
-        self.create_board()
-        self.game_rules()
-        self.play()
-        
-
+        self.player_name()
     
+    def player_name():
+    """
+    Player will chose their name for the game
+    Only alphabetic characters will be accepted
+    """
+    print("Print your name for this game")
+    while True:
+        name = input("My name is: ")
+        if name.isalpha():
+            print(f"Hi {name}, let's play!")
+            slef.name = name
+            break
+        else:
+            print("Your name can only be alphabetic characters, try again")
+            
+           
     def decide_symbol(self):
         """
         Will randomly choose what symbol the player and computer will play, X or O
@@ -46,7 +53,7 @@ class TicTacToeGame:
         Creates a 3x3 board for the game
         """
         print("Tic-Tac-Toe")
-        board = [ ["-"] * 3 for _ in range(3) ]
+        board = [["-"] * 3 for _ in range(3)]
         for row in board:
             print(row)
         self.board = board
@@ -57,7 +64,7 @@ class TicTacToeGame:
         Human player and Computer player will take turns
         """
         count = 0
-        human_turn = first_player()
+        human_turn = first_player(self.name)
         while True:
             if human_turn == "human":
                 self.human_move()
@@ -73,7 +80,7 @@ class TicTacToeGame:
                 break
             elif count == 9:
                 print("Tie! Nobody won, try again!")
-                break
+                
 
         def human_move(self):
             """
@@ -116,22 +123,15 @@ class TicTacToeGame:
                     return line[0]
             return None
 
-
-def player_name():
-    """
-    Player will chose their name for the game
-    Only alphabetic characters will be accepted
-    """
-    print("Print your name for this game")
-    while True:
-        name = input("My name is: ")
-        if name.isalpha():
-            print(f"Hi {name}, let's play!")
-            break
-        else:
-            print("Your name can only be alphabetic characters, try again")
+        def print_board(self):
+            """
+            Will show the board with current status
+            """
+            for row in self.board:
+                print(" ".join(row))
             
-player_name()
+
+
 
 def first_player():
     """
