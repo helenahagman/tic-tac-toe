@@ -1,31 +1,35 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<h1>TIC-TAC-TOE</h1>
+<p>I built this game as my 3rd milestoneproject, learning Python.<br> 
+The game is supposed to be an easy but fun game, the classic tic-tac-toe.</p>
+<p>Primary goal of the game:<br> 
+<ul>
+<li>Get three in row to win</li>
+<li>Horizontal, vertical or diagonal will work</li>
+<li>Player 1 (human) and player 2 (computer) takes turns to place their marker on the board</li>
+<li>Players will be represented by X and O on the board</li>
+<li>When the board is full and there is no winner, it´s a tie</li>
+</ul>
+</p>
+<p>Add aresponsive image of the finished game here.<a href="https://ui.dev/amiresponsive" rel="nofollow">amiresponsive</a></p>
+<p>Add a link to the live site here</p>
 
-Welcome helenahagman,
+<h2>CONTENTS</h2>
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+<li>
+<p>User Experience</p>
+<p>User Stories</li>
 
-## Reminders
+<li>
+<p>Design</p>
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+<p>Future Implementations</p>
+<p>Deployment &amp; Local Development<</p>
 
-## Creating the Heroku app
+<p>Testing</p>
+</li>
+<li>
+<p>Credits</p>
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+<li><a href="https://">Code Used</a></li>
 
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
+<li><a href="https://">Acknowledgments</a></li>
