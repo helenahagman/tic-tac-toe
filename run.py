@@ -68,16 +68,22 @@ class TicTacToeGame:
         Checks if move is possible or not
         Checks if the game is won or not
         """
+        self.welcome()
+        self.show_rules()
+        self.create_board()
+        self.first_player()
+        self.player_name()
+
         while True:
-            player_input = input(f"{self.current_player}, your turn, choose a number between 1 and 9")
+            player_input = input(f"{self.current_player}, your turn, choose a number between 1 and 9: ")
             try:
                 player_select = int(player_input)
             except ValueError:
-                print("Try again, your number needs to be between 1 and 9")
+                print("Try again, your number needs to be between 1 and 9: ")
                 continue
 
             if player_select > 9 or player_select < 1:
-                print("Try again, your number needs to be between 1 and 9")
+                print("Try again, your number needs to be between 1 and 9: ")
                 continue
 
             self.board[player_select-1] = self.current_player
@@ -103,6 +109,71 @@ class TicTacToeGame:
             print(f'| {self.board[i]} | {self.board[i+1]} | {self.board[i+2]} |')
             print('-------------')
 
+    def winner_check(self):
+        winning_combinations = [
+            # Horizontal
+            (0, 1, 2),
+            (3, 4, 5),
+            (6, 7, 8),
+            # Vertical
+            (0, 3, 6),
+            (1, 4, 7),
+            (2, 5, 8),
+            # Diagonal
+            (0, 4, 8),
+            (2, 4, 6)
+        ]
+
+        for comb in winning_combinations:
+            if self.board[comb[0]] == self.board[comb[1]] == self.board[comb[2]] != ' ':
+                return self.board[comb[0]]
+
+        return None
+
+    def make_move(self, is_human):
+        """
+        Prompts the player to select a move and updates the board accordingly.
+        If is_human is True, the move will be made by the human player, otherwise the computer player.
+        """
+        player = "human" if is_human else "computer"
+        prompt = f"Enter the cell number where you want to place '{self.current_player}': "
+    
+        if is_human:
+            move = input(prompt)
+            while not self.is_valid_move(move):
+                print("Try again")
+                move = input(prompt)
+            self.board[int(move) - 1] = self.current_player
+        else:
+            move = self.get_computer_move()
+            self.board[move] = self.current_player
+
+        print(f"{player} played {self.current_player} in cell {move + 1}.\n")
+
+
+    def winner_check(self):
+        """
+        Checks if there is a winner and returns the winner (if any).
+        """
+        winning_combinations = [
+            # Horizontal
+            (0, 1, 2),
+            (3, 4, 5),
+            (6, 7, 8),
+            # Vertical
+            (0, 3, 6),
+            (1, 4, 7),
+            (2, 5, 8),
+            # Diagonal
+            (0, 4, 8),
+            (2, 4, 6)
+        ]
+
+        for comb in winning_combinations:
+            if self.board[comb[0]] == self.board[comb[1]] == self.board[comb[2]] != ' ':
+                return self.board[comb[0]]
+
+        return None
 
     def game_over(self):
         """
@@ -136,7 +207,7 @@ class TicTacToeGame:
 
 
 
-if.name == "main":
+if__name__ == "__main__":
 game = TicTacToeGame()
 game.play()  
     
