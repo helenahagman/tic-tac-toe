@@ -36,7 +36,7 @@ class TicTacToeGame:
                 print("Your name can only be alphabetic characters, try again")
             
     
-    def create_board():
+    def create_board(self):
         """
         Creates a board 3 rows and 3 columns
         """
@@ -44,6 +44,17 @@ class TicTacToeGame:
         for i in range(0, 9, 3):
             print(f'| {self.board[i]} | {self.board[i+1]} | {self.board[i+2]} |')
             print('-------------')
+
+
+    def first_player():
+        """
+        Will choose randomly which player starts
+        """
+        if random.randint(0, 1) == 0:
+            return 'computer'
+        else:
+            return '{player_name}'
+
 
     def play(self, position):
         """
@@ -59,41 +70,30 @@ class TicTacToeGame:
         else:
             print("Not correct, make another move.")
 
-            
 
-        def human_move(self):
+        def make_move(self, is_human):
             """
-            Will allow the human player to make a move
+            Will allow the players to make a move
             checks if it is a possible move and updates the board accordningly
             """
+            player_name = self.name if is_human else "Computer"
             print(f"{self.name}, make your move.")
             while True: 
                 col = int(input("Choose column, 0-2: "))
                 row = int(input("Choose row, 0-2: "))
                 if self.board[row][col] == "-":
-                    self.board[row][col] = self.symbol_1
+                    symbol = self.symbol_1 if is_human else self.symbol_2
+                    self.board[row][col] = symbol
                     break
                 else:
                     print("You need to make another move, this space is taken")
             self.print_board()
 
-        def computer_move(self):
-            """
-            Will allow the computer player to make a random move
-            Updates the board accordningly
-            """
-            print("Computer makes a move.")
-            while True: 
-                col = int(input("Choose column, 0-2: "))
-                row = int(input("Choose row, 0-2: "))
-                if self.board[col][row] == "-":
-                    self.board[col][row] = self.symbol_1
-                    break
-            self.print_board()
+
 
         def winner_check(self):
             """
-            Will check for a winner with 3 in a row 
+            Will check for a winner with 3 in a row, horizontally, vertically or diagonally 
             """
             winning_positions = [(0, 1, 2), (3, 4, 5), (6, 7, 8), (0, 3, 6), (1, 4, 7), (2, 5, 8), (0, 4, 8), (2, 4, 6)]
             for pos in winning_positions:
@@ -111,17 +111,6 @@ class TicTacToeGame:
             for row in self.board:
                 print(" ".join(row))
             
-
-
-
-def first_player():
-    """
-    Will choose randomly which player starts
-    """
-    if random.randint(0, 1) == 0:
-        return 'computer'
-    else:
-        return '{player_name}'
 
 
 def start_game(board, symbol_1, symbol_2):
