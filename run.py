@@ -7,7 +7,7 @@ class TicTacToeGame:
         self.board = [' ' for _ in range(9)]        
         self.current_player = 'X'
        
-    def welcome(self)
+    def welcome(self):
         """
         Welcome message for the game
         """
@@ -25,7 +25,11 @@ class TicTacToeGame:
             * You will take turns with the computer until the board is full.
             * The player who successfully places 3 markers in a row wins.
             * Vertical, horizontal or diagonal rows all count as a win.
-            * If nobody won and the the board is full, it's a tie.\n'''
+            * If nobody won and the the board is full, it's a tie.
+            * The board is numbered like this:
+        print('| 1 | 2 | 3 |')
+        print('| 4 | 5 | 6 |')
+        print('| 7 | 8 | 9 |')\n'''
         
         print(game_rules)
 
@@ -44,7 +48,7 @@ class TicTacToeGame:
             else:
                 print("Your name can only be alphabetic characters, try again")
 
-    def want_to_play():
+    def want_to_play(self):
         """
         Asks the visitor if they want the game to start
         """
@@ -76,7 +80,7 @@ class TicTacToeGame:
                 print("Try again, your number needs to be between 1 and 9")
                 continue
 
-            if self.board(player_select-1) = self.current_player
+            self.board[player_select-1] = self.current_player
             self.print_board()
             winner = self.winner_check()
             if winner is not None:
@@ -100,64 +104,39 @@ class TicTacToeGame:
             print('-------------')
 
 
-    def first_player():
+    def game_over(self):
         """
-        Will choose randomly which player starts
+        Will check if the game is over 
         """
-        if random.randint(0, 1) == 0:
-            return 'computer'
-        else:
-            return '{player_name}'
+        return self.winner_check() or ' ' not in self.board
 
 
     def play(self, position):
         """
-        Will start the game
-        Human player and Computer player will take turns
+        Main function to play the game
         """
-        if self.board[position] == ' ':
-            self.board[position] = self.current_player
+        print("Welcome to the Tic-Tac-Toe game!")
+        self.player_name()
+        self.first_player()
+        self.create_board()
+
+        while not self.game_over():
             if self.current_player == 'X':
-                self.current_player = 'O'
+                self.make_move(True)
             else:
-                self.current_player = 'X'
+                self.make_move(False)
+            self.print_board()
+        
+        if self.winner_check() == 'X':
+            print("You win!")
+        elif self.winner_check() == 'O':
+            print("Computer wins!")
         else:
-            print("Not correct, make another move.")
-
-
-    def make_move(self, is_human):
-        """
-        Will allow the players to make a move
-        checks if it is a possible move and updates the board accordningly
-        """
-        player_name = self.name if is_human else "Computer"
-        print(f"{self.name}, make your move.")
-        while True: 
-            col = int(input("Choose column, 0-2: "))
-            row = int(input("Choose row, 0-2: "))
-            if self.board[row][col] == "-":
-                symbol = self.symbol_1 if is_human else self.symbol_2
-                self.board[row][col] = symbol
-                break
-            else:
-                print("You need to make another move, this space is taken")
-        self.print_board()
+            print("Nobody won, it is a tie!")
 
 
 
-    
-    def print_board(self):
-        """
-        Will show the board with current status
-        """
-        for row in self.board:
-            print(" ".join(row))
-            
-
-
-
-
-
+if.name == "main":
 game = TicTacToeGame()
-print(game.board)  
+game.play()  
     
