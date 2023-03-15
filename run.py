@@ -59,6 +59,7 @@ class TicTacToeGame:
         """
         if self.board[position] == ' ':
             self.board[position] = self.current_player
+            return True
         else:
             print("You can not make that move, try again.")
             return False
