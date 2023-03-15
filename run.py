@@ -1,5 +1,5 @@
-#import library for computer player
 import random
+#import library for computer player
 
 #Welcome message for the game
 welcome = "Welcome to the Tic-Tac-Toe game!"
@@ -47,6 +47,7 @@ class TicTacToeGame:
             name = input("Name: ")
             if name.isalpha():
                 print(f"Hi {name}, let's play!")
+                self.player = name
                 return name
             else:
                 print("Your name can only be alphabetic characters, try again")
@@ -58,12 +59,9 @@ class TicTacToeGame:
         """
         if self.board[position] == ' ':
             self.board[position] = self.current_player
-            if self.current_player == 'X':
-                self.current_player = 'O'
-            else:
-                self.current_player = 'X'
         else:
             print("You can not make that move, try again.")
+            return False
        
     def start_game(self):
         """
@@ -74,19 +72,35 @@ class TicTacToeGame:
         self.player_name()
         self.create_board()
         while not self.game_over():
-            position = int(input("Enter a number (1-9): ")) - 1
-            self.make_move(position)
+            if self.current_player == 'X':
+                while True:
+                    position = input("Enter a number between 1 and 9: ")
+                    if position.isnumeric():
+                        position = int(position) - 1
+                        if position < 0 or position > 8:
+                            print("Try again, a number betrween 1 and 9: ")
+                            continue
+                        if self.make_move(position):
+                            break
+                    else:
+                        print("Try again, a number betrween 1 and 9: ")
+            else:
+                print("Computer move on the way...")
+                available_positions = [i for i, x in enumerate(self.board) if x == ' ']
+                position = random.choice(available_positions)
+                self.make_move(position)
             self.create_board()
             winner = self.winner_check()
             if winner is not None:
-                print(f"The winner is {winner}!")
+                if winner == 'X':
+                    print(f"The winner is {self.player}!")
+                else:
+                    print("Tuff luck, computer wins!")
                 break
             if ' ' not in self.board:
                 print("Tie! Nobody wins.")
                 break
             self.current_player = 'O' if self.current_player == 'X' else 'X'
-   
-    
    
 
     def winner_check(self):
@@ -113,10 +127,7 @@ class TicTacToeGame:
 
         return None
 
-    
-
-
-    
+        
     def game_over(self):
         """
         Will check if the game is over 
