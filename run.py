@@ -106,9 +106,18 @@ class TicTacToeGame:
                 print("Tie! Nobody wins.")
                 break
             self.current_player = 'O' if self.current_player == 'X' else 'X'
-        play_again = input("Play again? Print Y for yes or N to quit: ")
-        if play_again.upper() == "N":
-            print("Ok, see you later!")
+       
+        while True:
+            play_again = input("Play again? Print Y for yes or N to quit: ")
+            if play_again.upper() == "N":
+                print("Ok, see you later!")
+                break
+            elif play_again.upper() == "Y" :
+                self.board = [' ' for _ in range(9)]
+                self.current_player = 'X'
+                self.start_game()
+            else:
+                print("Want to play again? Press Y or N if you want to end the game.")
                
 
     def winner_check(self):
