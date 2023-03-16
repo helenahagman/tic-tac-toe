@@ -28,6 +28,7 @@ class TicTacToeGame:
         self.board = [' ' for _ in range(9)]        
         self.current_player = 'X'
        
+
     def create_board(self):
         """
         Creates a board 3 rows and 3 columns
@@ -36,6 +37,7 @@ class TicTacToeGame:
         for i in range(0, 9, 3):
             print(f'| {self.board[i]} | {self.board[i+1]} | {self.board[i+2]} |')
             print('-------------')
+
 
     def player_name(self):
         """
@@ -52,10 +54,11 @@ class TicTacToeGame:
             else:
                 print("Your name can only be alphabetic characters, try again")
 
+
     def make_move(self, position):
         """
         Tells the player to make a move
-        Also updates the board
+        Also updates the board after each move
         """
         if self.board[position] == ' ':
             self.board[position] = self.current_player
@@ -63,6 +66,7 @@ class TicTacToeGame:
         else:
             print("You can not make that move, try again.")
             return False
+
        
     def start_game(self):
         """
