@@ -46,7 +46,7 @@ class TicTacToeGame:
         """
         print("Please pick a name for this game.")
         while True:
-            name = input("Name: ")
+            name = input("Name: \n")
             if name.isalpha():
                 print(f"Hi {name}, let's play!")
                 self.player = name
@@ -79,7 +79,7 @@ class TicTacToeGame:
         while not self.game_over():
             if self.current_player == 'X':
                 while True:
-                    position = input("Your turn, enter a number between 1 and 9: ")
+                    position = input("Your turn, enter a number between 1 and 9: \n")
                     if position.isnumeric():
                         position = int(position) - 1
                         if position < 0 or position > 8:
