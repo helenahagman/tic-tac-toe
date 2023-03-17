@@ -4,7 +4,9 @@
 
 <h2>The Tic-Tac-Toe game</h2>
 <p>I built this game as my 3rd milestoneproject, learning Python.<br> 
-The game is meant to be easy but fun classic tic-tac-toe.</p>
+The game is meant to be easy but fun classic tic-tac-toe.</p><br>
+<h3>Flowchart to visualise the steps of the game:</h3>
+<p></p><img src="views/assets/images/flowchart.JPG" alt="Flowchart" width="550" height="370"></p>
 <br>
 <h3>Primary goal of the game:</h3> 
 <ul>
@@ -53,7 +55,7 @@ The game is meant to be easy but fun classic tic-tac-toe.</p>
 <br>
 <li><a href="https://extendsclass.com/python-tester.html">Python Code Checker</a><br>
 <p>Used for testing the code for syntax errors - 1 Syntax error detected</p>
-<img src="views/assets/images/syntaxerror.JPG" alt="Syntax error" width="250" height="200"></a></li>
+</a></li>
 <br>
 
 <h3>Final testing of the code in the live app</h3>
@@ -140,10 +142,16 @@ The game is meant to be easy but fun classic tic-tac-toe.</p>
 </table>
 </li>
 <br> 
- <h3>Solved bugs</h3>
+ <h3>Unsolved bugs</h3>
+<br>
+<li><a href="https://extendsclass.com/python-tester.html">Python Code Checker</a><br>
+<p>Used for testing the code for syntax errors - 1 Syntax error detected.</p>
+<img src="views/assets/images/syntaxerror.JPG" alt="Syntax error" width="250" height="200"></a>
+<p>Status - Not solved</p></li>
+<br>
 
 
-<li>
+
 <h3>Credits & Inspiration</h3>
 
 <a>Sites and code used for inspiration and test on this project:</a>
@@ -157,6 +165,14 @@ The game is meant to be easy but fun classic tic-tac-toe.</p>
 <p>For inspiration on how to build the readme file and content to add.</p></li>
 <li><a href="https://github.com/kera-cudmore/TheQuizArms/blob/main/TESTING.md#Full-Testing">Kera Cudmore, readme examples</a><br>
 <p>For inspiration on how to display the testing with tables</p></li>
-<li><a href="https://">Acknowledgments</a></li>
+<li><a href="https://www.lucidchart.com/pages/what-is-a-flowchart-tutorial">Lucidchart</a></li>
+<p>To make the chart for the thinking-process of the project</p>
 
-<li><a href="https://">Acknowledgments</a></li>
+<li><a href="https://www.w3schools.com/python/default.asp">W3School Pyhton Tutorial</a></li>
+<p>Problem solvning</p>
+<li><a href="https://www.python.org/about/help/">Pyhton.org</a></li>
+<p>Problem solvning</p>
+<li><a href="https://www.youtube.com/watch?v=eWRfhZUzrAc">Pyhton for beginners</a></li>
+<p>Problem solvning and idéas</p>
+
+<p>A special thank you to my mentor Jubril Akolade for useful tips and support on the way</p>
