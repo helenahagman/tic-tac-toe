@@ -188,3 +188,4 @@ The game is meant to be easy but fun classic tic-tac-toe.</p><br>
 <p>Problem solvning and idéas</p>
 <br>
 <p>A special thank you to my mentor Jubril Akolade for useful tips and support on the way</p>
+<p>Also thank you to The Code Institute for material and deployment terminal</p>
