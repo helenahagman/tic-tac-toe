@@ -35,10 +35,10 @@ class TicTacToeGame:
         """
         print('-------------')
         for i in range(0, 9, 3):
-             print(f'| {self.board[i]} | '
-                   f'{self.board[i+1]} | '
-                   f'{self.board[i+2]} |')
-            print('-------------')
+            print(f'| {self.board[i]} | '
+                  f'{self.board[i+1]} | '
+                  f'{self.board[i+2]} |')
+        print('-------------')
 
     def player_name(self):
         """
