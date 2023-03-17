@@ -142,7 +142,19 @@ The game is meant to be easy but fun classic tic-tac-toe.</p><br>
 </table>
 </li>
 <br> 
- <h3>Unsolved bugs</h3>
+<h3>Bugs and errors</h3>
+<br>
+<p>During the creating process of this game a lot of the work have been trying to fix minor bugs and errors to make the game work the way I intended it to.</p>
+<p>A few fixes along the way:
+<li>Display of the empty game board - tried several ways of displaying the board</li>
+<li>Name of the player didn't display efter entering the name</li>
+<li>No error message when player entered a number in the name feild - added isalpha in the player_name function</li>
+<li>The board didn't update the player move on the board - was missing position input</li>
+<li>The game didn'r restart when Y was entered - fixed in the start_game function</li>
+<li>When a player chose to play again they were told to add a new name - fixed in the start_game funciton</li>
+<br>
+</p>
+ <h3>Known unsolved bugs</h3>
 <br>
 <li><a href="https://extendsclass.com/python-tester.html">Python Code Checker</a><br>
 <p>Used for testing the code for syntax errors - 1 Syntax error detected.</p>
@@ -154,7 +166,7 @@ The game is meant to be easy but fun classic tic-tac-toe.</p><br>
 
 <h3>Credits & Inspiration</h3>
 
-<a>Sites and code used for inspiration and test on this project:</a>
+<p>Sites and code used for inspiration and test on this project:</p>
 <li><a href="https://www.programiz.com/python-programming/online-compiler/">Online Python Compiler</a><br>
 <p>Used throughout the project for testing the code as I went along to see the result straight away.</p></li>
 <li><a href="https://inventwithpython.com/invent4thed/chapter10.html">Invent With Python</a><br>
@@ -174,5 +186,5 @@ The game is meant to be easy but fun classic tic-tac-toe.</p><br>
 <p>Problem solvning</p>
 <li><a href="https://www.youtube.com/watch?v=eWRfhZUzrAc">Pyhton for beginners</a></li>
 <p>Problem solvning and idéas</p>
-
+<br>
 <p>A special thank you to my mentor Jubril Akolade for useful tips and support on the way</p>
