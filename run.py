@@ -45,7 +45,7 @@ class TicTacToeGame:
         Player will choose their name for the game
         Only alphabetic characters will be accepted
         """
-        print("Please pick a name for this game.")
+        print("Choose a name to play.")
         while True:
             name = input("Name: \n")
             if name.isalpha():

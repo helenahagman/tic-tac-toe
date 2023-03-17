@@ -15,9 +15,15 @@ The game is meant to be easy but fun classic tic-tac-toe.</p>
 <li>When the board is full and there is no winner, it´s a tie</li>
 </ul>
 </p>
-<p>Add a link to the live site here</p>
 <br>
-
+<p>Link to the live app here:</p>
+<a href="https://tic-tac-toe-game-pp3.herokuapp.com/">Tic-Tac-Toe-Game-PP3 on Heroku</a>
+<br>
+<br>
+<p>Link to the code in GitHub:</p>
+<a href="https://github.com/helenahagman/tic-tac-toe">Tic-Tac-Toe on GitHub</a>
+<br>
+<br>
 <h2>CONTENTS</h2>
 
 <li>
