@@ -41,7 +41,7 @@ The game is meant to be easy but fun classic tic-tac-toe.</p>
 <p>Used for testing the code for syntax errors</p></li>
 <li><a href="https://lighthouse-metrics.com/lighthouse/checks/276b5f51-03df-4623-94e4-edb401d97a5e/runs/6992b638-3ac8-4fd5-915d-b2eb7bb9a395">Lighthouse test</a><br><img src="views/assets/images/lighthouse.JPG" alt="Lighthouse" width="350" height="200"></li>
 <li><a href="https://pep8ci.herokuapp.com/">Code Institute CI Python linter</a><br>
-<p>Used for testing the code for errors- corrected and tested again - all clear with no errors found</p></li>
+<p>Used for testing the code for errors- corrected and tested again - all clear with no errors found</p><br> <img src="views/assets/images/cipythonlinter.JPG" alt="CI Python Linter" width="350" height="200"></li>
  
 </li>
 <li><a href="https://extendsclass.com/python-tester.html">Python Code Checker</a><br>

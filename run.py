@@ -27,6 +27,7 @@ class TicTacToeGame:
     def __init__(self):
         self.board = [' ' for _ in range(9)]
         self.current_player = 'X'
+        self.player = None
 
     def create_board(self):
         """
@@ -72,7 +73,9 @@ class TicTacToeGame:
         Checks if move is possible or not
         Checks if the game is won or not
         """
-        self.player_name()
+        if self.player is None:
+            self.player_name()
+        print(f"{self.player}, good luck!")
         self.create_board()
         while not self.game_over():
             if self.current_player == 'X':
